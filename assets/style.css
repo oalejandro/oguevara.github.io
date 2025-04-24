@@ -1,0 +1,149 @@
+/* -------------  Italian-inspired theme ------------- */
+
+/* Google Fonts (import once here so every page picks them up) */
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap");
+
+:root {
+  --italy-green: #2e7d32;
+  --italy-red:   #c62828;
+  --cream:       #fffaf3;
+  --text:        #333;
+  --shadow:      rgba(0, 0, 0, 0.05);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Lora", serif;
+  background: var(--cream);
+  color: var(--text);
+  line-height: 1.65;
+  padding: 1rem;
+}
+
+/* ---------------  Header & footer --------------- */
+
+header, footer {
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+/* thin tricolor bar above header */
+header::before,
+footer::after {
+  content: "";
+  display: block;
+  height: 4px;
+  background: linear-gradient(90deg,
+    var(--italy-green) 0 33.33%,
+    #fff 33.33% 66.66%,
+    var(--italy-red) 66.66% 100%);
+  border-radius: 2px;
+  margin-bottom: 0.75rem;
+}
+
+footer {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* ---------------  Typography --------------- */
+
+h1, h2, h3 {
+  font-family: "Cinzel", serif;
+  color: var(--italy-red);
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.35rem; margin-top: 1.25rem; }
+h3 { font-size: 1.1rem; margin-top: 1rem; }
+
+a {
+  color: var(--italy-green);
+  text-decoration: none;
+}
+
+a:hover { text-decoration: underline; }
+
+/* ---------  Recipe list grid (index.html) --------- */
+
+#recipe-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+article {
+  background: #fff;
+  padding: 1.25rem 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 6px var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+article:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 10px var(--shadow);
+}
+
+article h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.4rem;
+}
+
+article p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* ---------------  Recipe page tweaks --------------- */
+
+main {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+
+img {
+  max-width: 100%;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* ---------- thumbnail on recipe cards ---------- */
+article .card-thumb {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    margin-bottom: 0.75rem;
+    object-fit: cover;
+  }
+  
+  /* ---------- gallery on a recipe page ---------- */
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  
+  .gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+  }
+  
+  /* hero image (event flyer) */
+  
+  .hero {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
